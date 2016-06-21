@@ -3,12 +3,19 @@
 # all available years
 # all approved countries
 
+auth <- read.csv(input_files[[1]]
+	, header=FALSE
+	, stringsAsFactors = FALSE
+)[[1]]
+
 # # # # # # # # # # # # # # # # #
 # # block of code to run this # #
 # # # # # # # # # # # # # # # # #
-# your.username <- "username"
-# your.password <- "password"
-# your.project <- "project"
+
+your.username <- auth[[1]]
+your.password <- auth[[2]]
+your.project <- auth[[3]]
+
 # library(downloader)
 # setwd( "C:/My Directory/DHS/" )
 # source_url( "https://raw.githubusercontent.com/ajdamico/asdfree/master/Demographic%20and%20Health%20Surveys/download%20and%20import.R" , prompt = FALSE , echo = TRUE )

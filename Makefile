@@ -21,6 +21,7 @@ Sources += $(wildcard *.R)
 damico.R:
 
 test.Rout: passwords.csv test.R
+bigtest.Rout: passwords.csv bigtest.R
 
 ######################################################################
 
