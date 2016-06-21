@@ -146,10 +146,11 @@ z <-
 		"https://dhsprogram.com/data/dataset_admin/download-datasets.cfm" , 
 		body = list( proj_id = project.number ) 
 	)
+)
 
 # figure out which countries are available for download
-country.names <- xpathSApply( content( z ) , "//option" , xmlValue )
-country.numbers <- xpathSApply( content( z ) , "//option" , xmlGetAttr , "value" )
+country.names <- xpathSApply(c, "//option" , xmlValue )
+country.numbers <- xpathSApply(c, "//option" , xmlGetAttr , "value" )
 
 # remove everything *after* select a region
 country.numbers <- country.numbers[ -which( country.names == "Select Region" ):-length(country.numbers) ]

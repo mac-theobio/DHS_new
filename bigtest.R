@@ -16,7 +16,7 @@ your.username <- auth[[1]]
 your.password <- auth[[2]]
 your.project <- auth[[3]]
 
-# library(downloader)
+library(downloader)
 # setwd( "C:/My Directory/DHS/" )
 # source_url( "https://raw.githubusercontent.com/ajdamico/asdfree/master/Demographic%20and%20Health%20Surveys/download%20and%20import.R" , prompt = FALSE , echo = TRUE )
 # # # # # # # # # # # # # # #
@@ -148,7 +148,11 @@ z <-
 		body = list( proj_id = project.number ) 
 	)
 
+c <- xmlTreeParse(content(z))
+
+print(class(c))
+
 # figure out which countries are available for download
-country.names <- xpathSApply( content( z ) , "//option" , xmlValue )
-country.numbers <- xpathSApply( content( z ) , "//option" , xmlGetAttr , "value" )
+country.names <- xpathSApply( content( c ) , "//option")
+country.numbers <- xpathSApply( content( c ) , "//option" , xmlGetAttr , "value" )
 
