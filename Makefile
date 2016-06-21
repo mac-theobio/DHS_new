@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: notarget
+target pngtarget pdftarget vtarget acrtarget: test.Rout 
 
 ##################################################################
 
@@ -16,7 +16,11 @@ include stuff.mk
 
 ## Content
 
-test.Rout: $(Drop)/test.R
+Sources += $(wildcard *.R)
+
+damico.R:
+
+test.Rout: passwords.csv test.R
 
 ######################################################################
 
@@ -28,5 +32,5 @@ test.Rout: $(Drop)/test.R
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
 
-# -include $(ms)/wrapR.mk
+-include $(ms)/wrapR.mk
 # -include $(ms)/oldlatex.mk
