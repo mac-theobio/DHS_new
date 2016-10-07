@@ -134,12 +134,6 @@ stopifnot( length( project.line ) == 1 )
 project.number <- gsub( "(.*)<option value=\"([0-9]*)\">(.*)" , "\\2" , project.line )
 
 # log in again, but specifically with the project number
-values <- 
-	list( 
-		UserName = your.username , 
-		UserPass = your.password ,
-		proj_id = project.number
-	)
 
 # re-access the download-datasets page
 z <- 
