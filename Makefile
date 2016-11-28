@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: bigtest.Rout 
+target pngtarget pdftarget vtarget acrtarget: pearson.Rout 
 
 ##################################################################
 
@@ -22,6 +22,8 @@ damico.R:
 
 test.Rout: passwords.csv test.R
 bigtest.Rout: passwords.csv bigtest.R
+
+pearson.Rout: pearson.R
 
 ######################################################################
 
